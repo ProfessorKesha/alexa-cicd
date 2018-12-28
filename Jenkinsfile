@@ -17,10 +17,5 @@ pipeline {
         sh 'mvn -Dtest=AlexaControllerTest test'
       }
     }
-    stage('Deploy') {
-      steps {
-        sh 'mvn package'
-      }
-    }
   }
 }
