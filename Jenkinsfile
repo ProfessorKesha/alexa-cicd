@@ -12,5 +12,10 @@ pipeline {
         sh 'mvn -Dmaven.test.failure.ignore=true install'
       }
     }
+    stage('Report') {
+      steps {
+        realtimeJUnit(testResults: '**/reports/junit/*.xml')
+      }
+    }
   }
 }
