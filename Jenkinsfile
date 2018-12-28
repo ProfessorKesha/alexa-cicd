@@ -17,5 +17,10 @@ pipeline {
         sh 'mvn -Dtest=AlexaControllerTest test'
       }
     }
+    stage('Deploy') {
+      steps {
+        archiveArtifacts 'target/*.war'
+      }
+    }
   }
 }
