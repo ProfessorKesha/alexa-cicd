@@ -4,6 +4,7 @@ pipeline {
     stage('Initialize') {
       steps {
         echo 'Starting pipeline'
+        sh 'mvn clean'
       }
     }
   }
