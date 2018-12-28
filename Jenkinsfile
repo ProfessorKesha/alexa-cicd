@@ -12,10 +12,9 @@ pipeline {
         sh 'mvn -Dmaven.test.failure.ignore=true install'
       }
     }
-    stage('Report') {
+    stage('Test') {
       steps {
-        sh 'mvn test'
-        realtimeJUnit(testResults: 'target/surefire-reports/*.xml')
+        sh 'mvn -Dtest=AlexaControllerTest test'
       }
     }
   }
