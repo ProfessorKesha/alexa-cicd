@@ -7,5 +7,10 @@ pipeline {
         sh 'mvn clean'
       }
     }
+    stage('Build') {
+      steps {
+        sh 'mvn -Dmaven.test.failure.ignore=true install'
+      }
+    }
   }
 }
