@@ -20,6 +20,7 @@ pipeline {
     stage('Deploy') {
       steps {
         archiveArtifacts 'target/*.war'
+        sh 'aws s3 cp target/alexa-cicd-0.0.1-SNAPSHOT.war s3://elasticbeanstalk-us-east-1-593614531934/alexa-cicd-0.0.1-SNAPSHOT.war'
       }
     }
   }
