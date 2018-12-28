@@ -21,7 +21,8 @@ pipeline {
       steps {
         archiveArtifacts 'target/*.war'
         sh '''pwd
-
+cd
+pwd
 aws --debug --profile jenkins-server s3 cp /var/lib/jenkins/workspace/alexa-cicd_master/target/alexa-cicd-0.0.1-SNAPSHOT.war s3://elasticbeanstalk-us-east-1-593614531934/alexa-cicd-0.0.1-SNAPSHOT.war'''
       }
     }
