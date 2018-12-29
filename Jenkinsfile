@@ -15,6 +15,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'mvn -Dtest=AlexaControllerTest test'
+        realtimeJUnit(testResults: 'build/reports/**/*.xml')
       }
     }
     stage('Deploy') {
